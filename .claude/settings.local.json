@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"c:/Users/4253/Downloads/LGE_DXSchool/11_HTML&CSS/미니프로젝트/LGE_DXSchool_miniProject_LoL_Web/\")",
+      "Bash(ls -la \"c:/Users/4253/Downloads/LGE_DXSchool/11_HTML&CSS/미니프로젝트/LGE_DXSchool_miniProject_LoL_Web/src/\")",
+      "Bash(sed -i 's|@import \"\"project.css\"\"|@import \"\"src/css/project.css\"\"|g' \"리그 오브 레전드.html\")",
+      "Bash(sed -i 's|href=\"\"./리그일정.css\"\"|href=\"\"./src/css/리그일정.css\"\"|g' \"리그 오브 레전드.html\")"
+    ]
+  }
+}

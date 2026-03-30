@@ -1,0 +1,683 @@
+/* ===============================
+   Font Face Registration
+   =============================== */
+
+/* RIXGOB */
+@font-face {
+  font-family: "RIXGOB";
+  src: url("../fonts/RIXGOB.woff2") format("woff2"),
+       url("../fonts/RIXGOB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* RIXGOEB */
+@font-face {
+  font-family: "RIXGOEB";
+  src: url("../fonts/RIXGOEB.woff2") format("woff2"),
+       url("../fonts/RIXGOEB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* RIXGOL */
+@font-face {
+  font-family: "RIXGOL";
+  src: url("../fonts/RIXGOL.woff2") format("woff2"),
+       url("../fonts/RIXGOL.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* RIXGOM */
+@font-face {
+  font-family: "RIXGOM";
+  src: url("../fonts/RIXGOM.woff2") format("woff2"),
+       url("../fonts/RIXGOM.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* rix모던고딕b */
+@font-face {
+  font-family: "RIXModernGothicB";
+  src: url("../fonts/RIXModernGothicB.woff2") format("woff2"),
+       url("../fonts/RIXModernGothicB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+#wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+html, body {
+  background-color: #0A1428;
+}
+/* 시네마틱 */
+#cinematic {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+#cinematic video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: 50% 75%;
+}
+
+
+/* 중간 3분할 영역 */
+/* ===== middle 3칸 고정 덮어쓰기 ===== */
+/* ===============================
+   Middle 3 columns (PATCH / PROFILE / NOTICE)
+   =============================== */
+/* middle: 기본은 3개가 같이 커짐 */
+#middle{
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  gap: 0px;
+  align-items: stretch;
+
+  flex-wrap: nowrap;      /* 한 줄 유지 */
+  overflow-x: auto;       /* 좁아지면 스크롤 */
+  overflow-y: hidden;
+
+  padding: 0 20px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 3개 박스: 최소폭은 고정, 남는 공간은 같이 커짐 */
+#patch, .profile-card, #notice{
+  height: 350px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* 🔥 핵심: flex-grow 주고 + min-width로 하한선 고정 */
+#patch{
+  flex: 1 1 360px;        /* 1 비율로 커짐, 최소 360 */
+  min-width: 360px;
+  
+  padding:12px;
+}
+
+.profile-card{
+  flex: 2 1 640px;        /* 2 비율로 더 크게 커짐, 최소 640 */
+  min-width: 640px;
+  position: relative;
+}
+
+#notice{
+  flex: 1 1 360px;        /* 1 비율로 커짐, 최소 360 */
+  min-width: 360px;
+ 
+  padding:12px;
+  margin-right: 0px;
+}
+ 
+
+/* 최소 폭(원하는 값으로 조절) */
+#patch{       min-width: 600px; /*background:#e0e0e0*/; padding:12px; }
+.profile-card{min-width: 640px; position:relative; }
+#notice{      min-width: 600px; /*background:#e0e0e0*/; padding:12px; }
+#middle{
+  scrollbar-gutter: stable; /* 스크롤바 생겨도 레이아웃 덜 흔들림(지원 브라우저) */
+}
+
+#middle::-webkit-scrollbar{
+  height: 10px;
+}
+#middle::-webkit-scrollbar-thumb{
+  background: #bdbdbd;
+  border-radius: 999px;
+}
+#middle::-webkit-scrollbar-track{
+  background: #eee;
+  border-radius: 999px;
+}
+
+/* ===============================
+   Patch items
+   =============================== */
+#patch-title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#patch-item-1, #patch-item-2, #patch-item-3{
+  display: block;
+  background: #ffffffe8;
+  padding: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #000;
+  overflow: hidden;
+  border-radius:5px;
+}
+/* 패치노트 상단 바 */
+#patch-header {
+  background-color: #0A1428;   /* 요청한 컬러 */
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #a2946d;
+  margin-bottom: 8px;
+  border-radius:5px;
+}
+
+/* 패치노트 제목 텍스트 */
+#patch-title-link {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "RIXGOB", sans-serif;
+
+  /* 🔥 기울어진 효과 */
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* 더보기 */
+#patch-more-link {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "RIXGOB", sans-serif;
+  opacity: 0.85;
+}
+
+/* hover 효과 */
+#patch-title-link:hover,
+#patch-more-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* 썸네일 컨테이너 */
+#patch-thumb-1,
+#patch-thumb-2,
+#patch-thumb-3 {
+    float: left;
+    width: 120px;
+    height: 70px;
+    margin-right: 10px;
+    overflow: hidden;          /* 이미지 넘침 방지 */
+    border-radius: 6px;        /* 선택: 모서리 살짝 둥글게 */
+}
+ 
+/* 썸네일 이미지 */
+#patch-thumb-1 img,
+#patch-thumb-2 img,
+#patch-thumb-3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* 비율 유지 + 꽉 채우기 */
+    display: block;
+}
+
+/* patch1 + patch2 묶음 */
+.patch-meta{
+  display: flex;
+  gap: 6px;          /* 두 텍스트 사이 간격 */
+  align-items: center;
+}
+
+/* 기존 공통 마진 유지 */
+.patch-text-1,
+.patch-text-2,
+.patch-text-3,
+.patch-text-4{
+  margin: 2px 0;
+}
+
+/* patch-text-1: 게임 업데이트 */
+.patch-text-1{
+  font-size: 12px;
+  font-family: "RIXGOEB", sans-serif;
+  color: #b09f72;
+  font-weight: 800;
+}
+
+/* patch-text-2: 날짜 */
+.patch-text-2{
+  font-size: 12px;
+  font-family: "RIXGOL", sans-serif;
+  font-weight: 500;
+}
+
+/* patch-text-3: 패치 노트 제목 */
+.patch-text-3{
+  font-size: 18px;
+  font-family: "RIXGOEB", sans-serif;
+  font-weight: 800;
+}
+
+/* patch-text-4: 설명 문구 */
+.patch-text-4{
+  font-size: 14px;
+  font-family: "RIXGOM", sans-serif;
+  font-weight: 700;
+}
+
+
+/* ===============================
+   Notice
+   =============================== */
+/* 공지 상단 바 */
+#notice-header {
+  background-color: #0A1428;   /* 패치노트와 동일 */
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #a2946d;
+  margin-bottom: 8px;
+  border-radius:5px;
+}
+
+/* 공지 제목 텍스트 */
+#notice-title-link {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "RIXGOB", sans-serif;
+
+  /* 🔥 기울어진 효과 */
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* 공지 더보기 */
+#notice-more-link {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "RIXGOB", sans-serif;
+  opacity: 0.85;
+}
+
+/* hover 효과 */
+#notice-title-link:hover,
+#notice-more-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+#notice-item-1, #notice-item-2, #notice-item-3{
+  display: block;
+  background: #ffffffe8;
+  padding: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #000;
+  overflow: hidden;
+  border-radius:5px;
+}
+
+#notice-thumb-1, #notice-thumb-2, #notice-thumb-3{
+  float: left;
+  width: 70px;
+  height: 70px;
+  background: #bdbdbd;
+  text-align: center;
+  line-height: 70px;
+  margin-right: 10px;
+}
+
+/* notice-text-1 + notice-text-2 묶음 */
+.patch-meta{
+  display: flex;
+  gap: 6px;          /* 두 텍스트 사이 간격 */
+  align-items: center;
+}
+
+/* 공지 텍스트 공통 마진 */
+.notice-text-1,
+.notice-text-2,
+.notice-text-3,
+.notice-text-4{
+  margin: 2px 0;
+}
+
+/* notice-text-1: 게임 업데이트 */
+.notice-text-1{
+  font-size: 12px;
+  font-family: "RIXGOEB", sans-serif;
+  color: #b09f72;
+  font-weight: 800;
+}
+
+/* notice-text-2: 날짜 */
+.notice-text-2{
+  font-size: 12px;
+  font-family: "RIXGOL", sans-serif;
+  font-weight: 500;
+}
+
+/* notice-text-3: 공지 제목 */
+.notice-text-3{
+  font-size: 18px;
+  font-family: "RIXGOEB", sans-serif;
+  font-weight: 800;
+}
+
+/* notice-text-4: 설명 문구 */
+.notice-text-4{
+  font-size: 14px;
+  font-family: "RIXGOM", sans-serif;
+  font-weight: 700;
+}
+
+
+/* ===============================
+   Profile card (frame image + overlay content)
+   =============================== */
+.profile-frame{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* 프레임 비율 유지 */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profile-content{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: #e6d7b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  font-family: "RIXGOM", sans-serif;
+}
+
+/* Avatar / Name */
+.profile-avatar{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.profile-avatar img{
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+.profile-name{
+  text-align: center;
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: "RIXGOEB", sans-serif;
+}
+.profile-name a{
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "RIXGOEB", sans-serif;
+  font-weight: 500;          /* 또는 아예 삭제 */
+  letter-spacing: 0.5px;
+}
+.profile-name a:hover{ text-decoration: underline; }
+
+/* Bottom stats (overflow 방지 세팅 포함) */
+.profile-stats{
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* space-between 금지 */
+  gap: 18px;
+  flex-wrap: wrap;          /* 좁으면 아래로 내려가게 */
+
+  padding: 14px 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.profile-stats > div,
+.stat-rights{
+  min-width: 0;
+}
+
+.profile-stats a,
+.stat-right span{
+  text-decoration: none;
+  color: #f1e7d1;
+  font-weight: 900;
+  font-family: "RIXGOEB", sans-serif;
+  white-space: nowrap;      /* 숫자 줄바꿈 방지 */
+}
+
+/* left/mid flexible sizing */
+.stat-left{ flex: 1 1 160px; min-width: 0; }
+.stat-mid{  flex: 0 1 90px;  min-width: 0; }
+
+.stat-left .label,
+.stat-mid .label{
+  display: block;
+  font-size: 13px;
+  opacity: .8;
+  font-family: "RIXGOM", sans-serif;
+}
+.stat-left .value,
+.stat-mid .value{
+  font-size: 16px;
+  font-weight: 900;
+  font-family: "RIXGOB", sans-serif;
+  font-weight: normal;
+}
+
+/* Right stack */
+.stat-rights{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+}
+
+
+.stat-right{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "RIXGOEB", sans-serif;
+  font-weight: 800;
+}
+
+.stat-right span{
+  font-family: "RIXGOB", sans-serif;
+  font-weight: normal;
+}
+
+
+.stat-right img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* (옵션) #login float 잔재 제거용 */
+#login{ float: none; }
+
+/* 공지 썸네일 컨테이너 */
+#notice-thumb-1,
+#notice-thumb-2,
+#notice-thumb-3 {
+    float: left;
+    width: 120px;
+    height: 70px;
+    margin-right: 10px;
+    overflow: hidden;      /* 이미지 넘침 방지 */
+    border-radius: 6px;    /* 패치 썸네일과 통일 */
+}
+ 
+/* 공지 썸네일 이미지 */
+#notice-thumb-1 img,
+#notice-thumb-2 img,
+#notice-thumb-3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* 비율 유지 + 꽉 채우기 */
+    display: block;
+}
+
+
+/* 섹션 박스(너가 원하는 여백/배경으로 조절) */
+.yt-section{
+  width: 100%;
+  padding: 26px 0 18px;
+}
+
+/* 내부 1200 가운데 정렬 (wrap 쓰면 제거 가능) */
+.yt-section .yt-head,
+.yt-section .yt-scroller{
+  max-width: 2000px;
+  margin: 0 auto;
+  margin-left: 30px;
+  margin-right : 30px;
+}
+
+/* 헤더 */
+.yt-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 14px;
+}
+
+.yt-title{
+  margin-left: 50;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "RIXGOB", sans-serif;
+  color: #ffffff;
+}
+
+.yt-plus{
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  color: #666;
+  border: 1px solid #d8dbe0;
+  border-radius: 999px;
+  background: #fff;
+}
+
+/* ✅ 스크롤 영역 */
+.yt-scroller{
+  overflow-x: auto;          /* 가로 스크롤 */
+  overflow-y: hidden;
+  padding-bottom: 10px;      /* 스크롤바 공간 */
+  scroll-behavior: smooth;
+
+  /* 스냅(메이플 느낌) */
+  scroll-snap-type: x mandatory;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 트랙: 한 줄로만 */
+.yt-track{
+  display: flex;
+  gap: 22px;
+  padding: 0 2px;            /* 좌우 살짝 */
+  width: max-content;        /* 카드 개수만큼 길어지게 */
+}
+
+/* 카드 */
+.yt-card{
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "RIXGOL", sans-serif;
+  font-weight: 300;
+  width: clamp(220px, 18vw, 300px); /* ✅ 화면폭에 따라 카드 폭 자동 */
+  scroll-snap-align: start;
+}
+
+.yt-thumb{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;       /* 🔥 박스에 꽉 채움 */
+  background-position: center;  /* 가운데 기준 */
+  background-repeat: no-repeat;
+  border-radius: 14px;
+}
+
+/* 제목 */
+.yt-name{
+  margin: 10px 2px 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+
+  /* 한두 줄로 자르기 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 스크롤바(선택) */
+.yt-scroller::-webkit-scrollbar{
+  height: 8px;
+}
+.yt-scroller::-webkit-scrollbar-thumb{
+  background: #c9ced6;
+  border-radius: 999px;
+}
+.yt-scroller::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.yt-card:nth-child(1) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/1UnXNtJC53A/maxresdefault.jpg");
+}
+.yt-card:nth-child(2) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/dtg75rAvWvE/maxresdefault.jpg");
+}
+.yt-card:nth-child(3) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/iAAgfxD5Z_8/maxresdefault.jpg");
+}
+.yt-card:nth-child(4) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/kPAWTPuG-OA/maxresdefault.jpg");
+}
+.yt-card:nth-child(5) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/gr64wilpCoY/maxresdefault.jpg");
+}
+.yt-card:nth-child(6) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/26CJnuA9HzE/maxresdefault.jpg");
+}
+.yt-card:nth-child(7) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/iz3AqM1zVBE/maxresdefault.jpg");
+}
+.yt-card:nth-child(8) .yt-thumb{
+  background-image: url("https://img.youtube.com/vi/3IopTxF2Vcg/maxresdefault.jpg");
+}

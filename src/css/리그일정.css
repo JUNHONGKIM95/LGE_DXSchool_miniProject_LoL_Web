@@ -1,0 +1,355 @@
+/* =========================
+   Base
+========================= */
+* { box-sizing: border-box; }
+body{
+  background:#111111;
+  color:#eaeaea;
+  font-family: "RIXGOB", sans-serif;
+  margin: 0;
+}
+
+/* =========================
+   Layout (Left schedule + Right ranking)
+========================= */
+.layoutWrap{
+  width: min(1200px, 94%);
+  margin: 28px auto 50px auto;
+
+  display: grid;
+  grid-template-columns: 740px 1fr; /* ✅ 왼쪽 폭 고정(줄임), 오른쪽은 남는 공간 */
+  gap: 16px;
+  align-items: start;
+}
+
+/* =========================
+   Left: Schedule Card
+========================= */
+.container{
+  background: #161616;
+  border: 1px solid #232323;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  width: 740px;
+  padding: 18px 18px;   /* 전체 크기 조금 컴팩트 */
+}
+
+/* Title */
+.title_2026{
+  display: block;
+  margin: 0 0 16px 0;
+  padding: 10px 0;
+
+
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "RIXGOB", sans-serif;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #ffffff;
+
+  border-top: 1px solid #2b2b2b;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+/* title_2026 안의 링크 기본 파란색/밑줄 제거 */
+.title_2026 a,
+.title_2026 a:visited{
+  color: inherit;          /* ✅ h2(.title_2026) 글자색 그대로 사용 */
+  text-decoration: none;   /* ✅ 밑줄 제거 */
+}
+
+/* (선택) 마우스 올렸을 때도 파랗게 안 바뀌게 + 살짝만 효과 */
+.title_2026 a:hover,
+.title_2026 a:active{
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;            /* ✅ 원치 않으면 삭제 */
+}
+
+/* Date */
+.card_date{
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-family: "RIXGOB", sans-serif;
+  font-size: 20px;
+
+  color: #f0f0f0;
+}
+
+/* ul reset */
+.match_lines{
+  margin: 0;
+  padding: 0;
+}
+
+/* Match row */
+.match_line{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;     /* 세로 중앙 정렬 */
+  gap: 14px;
+
+  padding: 10px 12px;
+  margin-bottom: 8px;
+
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+}
+
+.match_line:hover{
+  border-color: #3a3a3a;
+  background: #202020;
+}
+
+/* Left schedule info */
+.match_schedule{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-width: 150px; /* 컴팩트 */
+}
+
+/* Time */
+.match_time{
+
+  font-family: "RIXGOB", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Status badge */
+.match_onoff{
+  font-size: 12px;
+
+  font-family: "RIXGOB", sans-serif;
+  padding: 5px 8px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  color: #cfcfcf;
+  background: #232323;
+}
+
+/* Optional colored statuses (원하면 HTML에 클래스 추가해서 사용) */
+.match_onoff.is-live{ color:#111; background:#00c73c; border-color:#00c73c; }
+.match_onoff.is-done{ color:#bdbdbd; background:#232323; border-color:#333; }
+.match_onoff.is-up{ color:#ffe08a; background:#2a2416; border-color:#3b331f; }
+
+/* Type */
+.match_type{
+  font-size: 12px;
+  font-family: "RIXGOB", sans-serif;
+
+  color: #9aa0a6;
+  white-space: nowrap;
+}
+
+/* Right teams area */
+.match_teams{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  justify-content: flex;
+
+  min-width: 0; /* ✅ 텍스트 말줄임/overflow를 위해 필수 */
+}
+
+/* Team blocks */
+.home_team, .away_team{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0; /* ✅ 말줄임이 먹게 */
+}
+
+/* Balance widths so VS stays centered-ish */
+.home_team{
+  justify-content: flex-end;
+  min-width: 200px;
+}
+.away_team{
+  justify-content: flex-start;
+  min-width: 200px;
+}
+
+/* Team name (ellipsis for long text) */
+.home_team > span,
+.away_team > span{
+  font-family: "RIXGOB", sans-serif;
+  font-size: 16px;
+
+  color: #f2f2f2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: 180px; /* ✅ 긴 팀명(한화생명 e스포츠 등) 튀어나옴 방지 */
+}
+
+/* Team logo */
+.home_team > img,
+.away_team > img{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+
+  background: #ffffff;
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* VS / score */
+.vs{
+  font-size: 20px;
+  font-family: "RIXGOB", sans-serif;
+
+  color: #9aa0a6;
+  min-width: 54px;
+  text-align: center;
+}
+
+/* =========================
+   Right: Ranking
+   (HTML 구조는 rankItem 안에 rankLogoBox가 있어야 함)
+========================= */
+.rankWrap{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* margin-top은 제거: 레이아웃 비율 깨짐 원인 */
+}
+
+/* Ranking card */
+.rankCard{
+  background: #161616;
+  border: 1px solid #232323;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 16px;
+}
+
+/* Title */
+.rankTitle{
+
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  margin-bottom: 12px;
+  font-family: "RIXGOB", sans-serif;
+  font-weight: 700;
+  font-size: 28px;  /* 너무 커서 잘리는 문제 방지 */
+}
+
+/* 5 teams grid, auto-fit로 안전하게 */
+.rankList{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+/* Each rank item */
+.rankItem{
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 10px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.rankItem:hover{
+  background: #242424;      /* ✅ 살짝 밝게 */
+  border-color: #3a3a3a;    /* ✅ 테두리도 살짝 밝게 */
+  transform: translateY(-2px); /* ✅ 원치 않으면 제거 */
+}
+
+/* Logo box (rank overlay) */
+.rankLogoBox{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Actual logo image */
+.rankLogo{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+
+  background-color: #E8E2D8; /* 네가 원하던 톤 */
+  border-radius: 999px;     /* 동그랗게 */
+  padding: 6px;
+}
+
+/* Rank number overlay on top of logo */
+.rankNo{
+  position: static;      /* ✅ absolute 제거 */
+  color: #ffffff;
+  font-family: "RIXGOB", sans-serif;
+
+  font-size: 14px;
+  line-height: 1;
+
+  width: 14px;           /* ✅ 1~5 자리 정렬용 */
+  text-align: center;     /* ✅ 숫자 오른쪽 정렬 */
+}
+
+/* Team name under logo */
+.rankTeam{
+  font-family: "RIXGOB", sans-serif;
+
+  font-size: 12px;
+  color: #eaeaea;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 980px){
+  .layoutWrap{
+    grid-template-columns: 1fr; /* 오른쪽이 아래로 내려감 */
+  }
+}
+
+/* Match rows stack on very small screens */
+@media (max-width: 860px){
+  .match_line{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .match_schedule{
+    min-width: 0;
+  }
+
+  .match_teams{
+    justify-content: space-between;
+  }
+
+  .home_team, .away_team{
+    min-width: 0;
+  }
+
+  .home_team > span, .away_team > span{
+    max-width: 140px;
+  }
+}
