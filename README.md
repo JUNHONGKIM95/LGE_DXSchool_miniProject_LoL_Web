@@ -21,11 +21,6 @@ url: https://junhongkim95.github.io/LGE_DXSchool_miniProject_LoL_Web/
 - <details>
   <summary><b>기존 웹사이트 화면</b> (클릭해서 펼치기)</summary>
   https://www.leagueoflegends.com/ko-kr/
-  <br/>
-  <img width="1899" height="904" alt="image" src="https://github.com/user-attachments/assets/c8827471-d3ac-4af5-8433-084ecd4735fa" />
-  <img width="1902" height="907" alt="image" src="https://github.com/user-attachments/assets/a74a0b3a-0a0e-4873-844d-49bb7cc30545" />
-  <img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/668f1c0b-1008-4cc1-a0d6-9ee38c49cba2" />
-  <img width="1896" height="904" alt="image" src="https://github.com/user-attachments/assets/50d78376-c3f4-4aeb-ba31-eaf8b8ea2351" />
 
 </details>
 
@@ -38,11 +33,6 @@ url: https://junhongkim95.github.io/LGE_DXSchool_miniProject_LoL_Web/
 - <details>
   <summary><b>기존 웹사이트 화면</b> (클릭해서 펼치기)</summary>
   https://www.leagueoflegends.com/ko-kr/news/game-updates/patch-26-1-notes/
-  <br/>
-  <img width="1898" height="908" alt="image" src="https://github.com/user-attachments/assets/48ff70a3-7654-46bb-b75e-a4d3e80a0106" />
-  <img width="1903" height="907" alt="image" src="https://github.com/user-attachments/assets/db5de53b-a9b6-49c9-b863-67fdf7d08358" />
-  <img width="1897" height="906" alt="image" src="https://github.com/user-attachments/assets/557163e8-9484-41fc-8870-5ef435d0e684" />
-  <img width="1898" height="905" alt="image" src="https://github.com/user-attachments/assets/7566bba5-f25b-44d8-aab6-7a3d1ea8dcd1" />
 
 
 </details>
@@ -68,10 +58,8 @@ url: https://junhongkim95.github.io/LGE_DXSchool_miniProject_LoL_Web/
   - <details>
     <summary><b>개선 웹사이트 화면</b> (클릭해서 펼치기)</summary>
     <br/>
-    <img width="1896" height="905" alt="image" src="https://github.com/user-attachments/assets/895e20b4-7438-483a-8196-ee87738c651f" />
-    <img width="1898" height="905" alt="image" src="https://github.com/user-attachments/assets/1edaa1a4-c0f7-438e-93d9-23b0b1dd48cf" />
-    <img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/4d5cca0d-1df4-4a8e-8cfa-31432b4fd33c" />
-
+    <img width="1890" height="913" alt="image" src="https://github.com/user-attachments/assets/b3ed1961-8dee-4112-9872-142cc9b4480b" />
+    <img width="1892" height="900" alt="image" src="https://github.com/user-attachments/assets/e01cbb7b-38d4-42f4-99d0-453bb874bdd8" />
   </details>
 
 - **로그인 및 사용자 계정 정보(ID, 티어 등)**  
@@ -88,21 +76,23 @@ url: https://junhongkim95.github.io/LGE_DXSchool_miniProject_LoL_Web/
   - <details>
     <summary><b>개선 웹사이트 화면</b> (클릭해서 펼치기)</summary>
     <br/>
-    <img width="1896" height="901" alt="image" src="https://github.com/user-attachments/assets/1091a5d5-98c5-4580-9f90-0e81464f7d22" />
+    <img width="1896" height="911" alt="image" src="https://github.com/user-attachments/assets/db65afa0-6f45-4197-b17e-1f01b1114dd2" />
+
 
   </details>
   - 사용자가 주로 관심을 가지는 정보 요약 제공  
     - 챔피언 상향/하향  
     - 아이템 업데이트  
     - 주요 시스템 변경  
-  - 클릭 시 해당 상세 섹션으로 **즉시 이동**
+  - 클릭 시 해당 상세 섹션으로 즉시 이동
 
 
 #### 🔹 오른쪽 PATCH MENU 고정 메뉴 (Fixed Menu)
   - <details>
       <summary><b>개선 웹사이트 화면</b> (클릭해서 펼치기)</summary>
       <br/>
-      <img width="1895" height="904" alt="image" src="https://github.com/user-attachments/assets/5b1cb1a8-3b92-4d32-b245-2d021854d9d0" />
+      <img width="1895" height="923" alt="image" src="https://github.com/user-attachments/assets/a293441d-e248-4e07-8d4c-35a50c125a74" />
+
 
     </details>
   - 패치 노트를 **헤드라인 기준으로 자동 목차화**
