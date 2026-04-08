@@ -6,6 +6,8 @@
 
 > 핵심 목표: **“한눈에 보이는 정보 중심 UX”**
 
+url: https://junhongkim95.github.io/LGE_DXSchool_miniProject_LoL_Web/
+
 ---
 
 ## 2. 문제 정의 (Why)
